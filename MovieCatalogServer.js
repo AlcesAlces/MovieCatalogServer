@@ -3,21 +3,6 @@ var mongodb = require('mongodb');
 
 var MongoClient = mongodb.MongoClient;
 
-//TODO: Remove debug function, this is to test XmlSupport stuff.
-startupFunction = function()
-{
-	var arrayToSend = [];
-	arrayToSend.push({name: 'fart', description: 'fart', genres: 'fart,fartmore', movieid: '5', userrating: '1', rating:'1', posternum: '0', year: '1995', image: 'fart'});
-	//arrayToSend.push(296883);
-	//arrayToSend.push(924);
-
-	var xmlTest = require('./XMLSupport');
-	
-	// var result = xmlTest.readFromXml({subpayload: arrayToSend});
-	var result = xmlTest.writeToXml({payload: arrayToSend});
-	console.log(result);
-};
-
 //startupFunction();
 
 io.sockets.on('connection', function (socket) {
